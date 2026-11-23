@@ -1,0 +1,173 @@
+:root {
+  --bleu: #3B82E6; --cyan: #22d3ee; --violet: #a855f7;
+  --orange: #f59e0b; --vert: #34d399; --rouge: #f87171;
+}
+
+body.admin {
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(600px 400px at 12% 8%, rgba(59,130,230,.22), transparent 60%),
+    radial-gradient(500px 400px at 92% 30%, rgba(34,211,238,.13), transparent 60%),
+    radial-gradient(600px 500px at 50% 100%, rgba(168,85,247,.12), transparent 60%),
+    #05070d;
+  background-attachment: fixed;
+}
+.admin h2 { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 2.2rem; }
+.admin h5 { font-weight: 500; }
+
+/* Page de connexion */
+body.admin-login {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.75)),
+    url('../img/login_bg.jpg') center/cover no-repeat;
+}
+.login-box {
+  width: 100%; max-width: 400px; padding: 2.5rem 2rem;
+  background: rgba(10,15,25,.55);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.15); border-radius: 20px;
+  box-shadow: 0 25px 60px -15px rgba(59,130,230,.45);
+}
+.login-box h1 {
+  font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+  text-align: center; margin-bottom: 1.8rem;
+}
+
+/* Barre du haut */
+.admin-nav {
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  position: sticky; top: 0; z-index: 10;
+}
+.admin-nav .brand {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+  letter-spacing: 3px; color: #fff; text-decoration: none;
+}
+.admin-nav a.lien { color: #bbb; text-decoration: none; margin-left: 1.4rem; font-size: .95rem; }
+.admin-nav a.lien:hover { color: var(--cyan); }
+
+/* Cartes en verre */
+.glass, .admin-carte {
+  background: linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px -15px rgba(0,0,0,.8);
+  padding: 1.6rem;
+}
+
+/* Cartes de statistiques */
+.stat { height: 100%; position: relative; }
+.stat .nombre { font-size: 2.6rem; font-weight: 600; line-height: 1.1; }
+.stat .legende { color: #bbb; font-size: .9rem; margin-top: .4rem; }
+.stat.s-bleu   { border-color: rgba(59,130,230,.7);  box-shadow: 0 0 25px -8px rgba(59,130,230,.6); }
+.stat.s-cyan   { border-color: rgba(34,211,238,.6);  box-shadow: 0 0 25px -8px rgba(34,211,238,.5); }
+.stat.s-violet { border-color: rgba(168,85,247,.6);  box-shadow: 0 0 25px -8px rgba(168,85,247,.5); }
+.stat.s-bleu .nombre { color: var(--cyan); text-shadow: 0 0 18px rgba(34,211,238,.6); }
+
+/* Étiquettes de catégories */
+.pill {
+  display: inline-block; padding: .22rem .95rem; border-radius: 50px;
+  font-size: .8rem; border: 1px solid; white-space: nowrap;
+}
+.pill-carriere    { color:#fbbf24; border-color:rgba(245,158,11,.7);  background:rgba(245,158,11,.08);  box-shadow:0 0 12px rgba(245,158,11,.3); }
+.pill-technologie { color:#67e8f9; border-color:rgba(34,211,238,.7);  background:rgba(34,211,238,.08);  box-shadow:0 0 12px rgba(34,211,238,.3); }
+.pill-education   { color:#d8b4fe; border-color:rgba(168,85,247,.7);  background:rgba(168,85,247,.08);  box-shadow:0 0 12px rgba(168,85,247,.3); }
+
+/* Boutons */
+.btn-horizon {
+  background: linear-gradient(90deg, #2563eb, #22d3ee);
+  color: #fff; border: none; border-radius: 12px;
+  padding: .6rem 1.4rem; font-weight: 500;
+  box-shadow: 0 0 22px -4px rgba(34,211,238,.55);
+}
+.btn-horizon:hover { color: #fff; filter: brightness(1.1); }
+
+.btn-act {
+  background: rgba(255,255,255,.04); border: 1px solid; border-radius: 8px;
+  padding: .25rem .7rem; font-size: .8rem; text-decoration: none; cursor: pointer;
+}
+.btn-voir  { color:#e5e7eb; border-color:rgba(255,255,255,.4); }
+.btn-modif { color:#5eead4; border-color:rgba(45,212,191,.5); }
+.btn-suppr { color:#fca5a5; border-color:rgba(248,113,113,.5); }
+.btn-act:hover { background: rgba(255,255,255,.1); }
+
+/* Tableau en lignes-cartes */
+.table-admin { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+.table-admin th { color: #9ca3af; font-weight: 500; font-size: .85rem; padding: 0 1rem; }
+.table-admin td {
+  padding: 1rem; vertical-align: middle;
+  background: rgba(255,255,255,.04);
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.table-admin td:first-child { border-left: 1px solid rgba(255,255,255,.1); border-radius: 12px 0 0 12px; font-weight: 600; }
+.table-admin td:last-child  { border-right: 1px solid rgba(255,255,255,.1); border-radius: 0 12px 12px 0; }
+.table-admin tr:hover td { background: rgba(255,255,255,.08); }
+
+/* Liste du tableau de bord */
+.ligne-article {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  padding: 1rem 1.2rem; margin-bottom: .7rem;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1); border-radius: 12px;
+}
+.ligne-article .titre { flex: 1 1 220px; }
+.ligne-article .date { color: #9ca3af; font-size: .9rem; }
+
+/* Formulaires */
+.admin .form-label { color: #bbb; font-size: .9rem; }
+.admin .form-control, .admin .form-select, .login-box .form-control {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff; border-radius: 12px; padding: .7rem 1rem;
+}
+.admin .form-control::placeholder { color: #9ca3af; }
+.admin .form-control:focus, .admin .form-select:focus, .login-box .form-control:focus {
+  background: rgba(255,255,255,.1);
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 .2rem rgba(34,211,238,.2);
+  color: #fff;
+}
+/* Page Messages : jaune et rouge */
+.msg {
+  border-left: 4px solid #facc15;
+  box-shadow: -8px 0 30px -12px rgba(250,204,21,.55),
+              0 10px 40px -15px rgba(0,0,0,.8);
+}
+.msg:hover { border-left-color: #ef4444; box-shadow: -8px 0 30px -12px rgba(239,68,68,.55), 0 10px 40px -15px rgba(0,0,0,.8); }
+
+.msg-sujet {
+  color: #fde047;
+  font-size: 1.15rem;
+  text-shadow: 0 0 14px rgba(250,204,21,.55);
+}
+.msg-date { color: #fca5a5; font-size: .85rem; }
+.msg-from { color: #9ca3af; }
+.msg-from a { color: #fbbf24; text-decoration: none; }
+.msg-from a:hover { color: #fde047; }
+
+/* Bouton Répondre : jaune brillant */
+.btn-repondre {
+  color: #1a1400;
+  background: linear-gradient(90deg, #facc15, #fbbf24);
+  border-color: #facc15;
+  font-weight: 600;
+  box-shadow: 0 0 18px -3px rgba(250,204,21,.7);
+}
+.btn-repondre:hover { color: #1a1400; filter: brightness(1.1); background: linear-gradient(90deg, #facc15, #fbbf24); }
+
+/* Bouton Supprimer : rouge lumineux (aussi sur la page Articles) */
+.btn-suppr {
+  color: #fecaca;
+  background: rgba(239,68,68,.15);
+  border-color: rgba(239,68,68,.8);
+  box-shadow: 0 0 14px -4px rgba(239,68,68,.7);
+}
+.btn-suppr:hover { background: rgba(239,68,68,.35); color: #fff; }
+.admin .form-select option { background: #111; color: #fff; }
